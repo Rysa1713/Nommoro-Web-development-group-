@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Tips - Nommoro</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="article&tips.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-articles">
+	
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <h1 class="logo"><a href="homepage.html">Nommoro</a></h1>
+        <div class="nav-menu">
+          <a href="homepage.html" class="nav-item">Home</a>
+          <a href="article&tips.html" class="nav-item active">Article & Tips</a>
+          <a href="expirycalculator.html" class="nav-item">Expiry Calculator</a>
+          <a href="recipes.html" class="nav-item">Recipes</a>
+          <a href="surplusmarket.html" class="nav-item">Surplus Market</a>
+        </div>
+      </div>
+      <div class="auth-section">
+        <button class="login-btn" id="loginBtn" onclick="window.location.href='login.html'">Login</button>
+        <div class="user-profile" id="userProfile" style="display: none;">
+          <div class="user-icon" onclick="window.location.href='userdashboard.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="35px" height="20px">
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="grid">
+                <!-- Left Column - Main Article -->
+                <div>
+                    <div class="main-article">
+                        <h1 class="article-title">Here's How Long Your Food Actually Lasts</h1>
+                        <p class="article-date">-July 12th 2025</p>
+                        <hr class="article-divider">
+                        
+                        <!-- L-shaped flexbox container -->
+                        <div class="l-shaped-container">
+                            <!-- Top section with image on the right -->
+                            <div class="top-section">
+                                <div class="support-box-container">
+                                    <div class="support-content">
+                                        <h3 class="support-title">How Long Can You Keep Leftovers?</h3>
+                                        <p class="support-text">
+											Many people keep leftovers in the fridge for convenience, but how long are they actually safe to eat? According to Mayo Clinic, leftovers should only be stored in the refrigerator for 3 to 4 days. Beyond that, the risk of harmful bacteria like Listeria and Salmonella increases—even if the food still smells and looks fine.
+
+											If you don’t think you’ll eat your leftovers in time, freeze them immediately. While frozen leftovers are safe indefinitely, it’s best to eat them within 3 to 4 months for the best flavor and texture.
+                                           
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="infographic">
+                                    <img src="foodlast.png" alt="Food Shelf Life Guide" class="enlarge-image" id="fridgeImage">
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom section that extends full width -->
+                            <div class="bottom-section">
+                                <div class="support-content">
+                                    <p class="support-text">
+                                        <strong>Beware of the “Danger Zone”</strong> 
+										as food becomes unsafe quickly when left at temperatures between 40°F and 140°F (4°C–60°C). Bacteria multiply rapidly here, which can lead to foodborne illness.
+
+										Don’t leave perishable food out for more than 2 hours
+
+										If the room is hotter than 32°C (like outdoors), reduce that to 1 hour
+                                        
+                                        <br><br>
+                                        
+                                        When you reheat leftovers, make sure the food reaches 165°F (74°C) throughout. Use a food thermometer if you have one. To help the food heat evenly, stir halfway through if you’re microwaving, and reheat in shallow containers rather than deep ones.
+                                        
+                                        <br><br>
+                                        
+                                        Mayo Clinic recommends a conservative approach to leftovers: refrigerate within 2 hours, consume within 3–4 days, or freeze right away. Always reheat thoroughly and don’t rely on taste or smell to assess safety—these measures help prevent foodborne illness and reduce waste.
+										<a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/food-safety/faq-20058500#:~:text=Leftovers%20can%20be%20kept%20for,days%2C%20freeze%20them%20right%20away." target="_blank" rel="noopener noreferrer" class="support-link">
+										Mayo Clinic Article
+										</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Storage table at bottom -->
+                        <div class="storage-table">
+                            <h4 class="table-title">
+                                Refrigerator Storage of Fresh or Uncooked Products
+                            </h4>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Storage Times After Purchase</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Poultry</td>
+                                            <td>1 or 2 days</td>
+                                        </tr>
+                                        <tr class="table-row-alt">
+                                            <td>Beef, Veal, Pork and Lamb</td>
+                                            <td>3 to 5 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ground Meat and Ground Poultry</td>
+                                            <td>1 or 2 days</td>
+                                        </tr>
+                                        <tr class="table-row-alt">
+                                            <td>Fresh Variety Meats (Liver, Tongue, Brain, Kidneys, Heart, Chitterlings)</td>
+                                            <td>1 or 2 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cured Ham, Cook-Before-Eating</td>
+                                            <td>5 to 7 days</td>
+                                        </tr>
+                                        <tr class="table-row-alt">
+                                            <td>Sausage from Pork, Beef or Turkey, Uncooked</td>
+                                            <td>1 or 2 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Eggs</td>
+                                            <td>3 to 5 weeks</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Support boxes -->
+                <div class="sidebar">
+                    <div class="author-section">
+                        <p class="author-label">By:</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span class="author-name">Mayo Clinic</span>
+                        </div>
+                    </div>
+
+                    <!-- Support boxes -->
+                    <div class="support-card">
+                        <h3 class="support-card-title">Save Money, Save Food</h3>
+                        <p class="support-card-text">
+                            Here's how you can extend your food shelf life!
+                        </p>
+                        <a href="a1.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+					
+					<!-- Support boxes -->
+                    <div class="support-card">
+                        <h3 class="support-card-title">Go Green!</h3>
+                        <p class="support-card-text">
+                            Compost food scraps like veggie peels and eggshells to reduce waste!
+                        </p>
+                        <a href="a2.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+					
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Decode Expiry Dates</h3>
+                        <p class="support-card-text">
+                            Confused by "Best Before" vs. "Use By"? Learn the key differences and how to make smart decisions without wasting perfectly good food.
+                        </p>
+                        <a href="a3.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Meal Planning Made Easy</h3>
+                        <p class="support-card-text">
+                            Step-by-step guide to weekly meal planning.
+                        </p>
+                        <a href="a4.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Packaging That Preserves: What Actually Works?<h3>
+                        <p class="support-card-text">
+                            Compare types of packaging and learn DIY tips!
+                        </p>
+                        <a href="a5.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Nommoro</h3>
+          <p>Building a sustainable future through mindful food consumption and waste reduction.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">About Nommoro</a></li>
+            <li><a href="https://globalgoals.org/goals/12-responsible-consumption-and-production/" target="_blank">SDG 12</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+			<li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="feedback.html">Feedback Form</a></li>
+            <li><a href="support.html">Help & Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/p/Reduce-Food-Waste-100068914386208/" target="_blank" class="social-link">f</a>
+            <a href="https://www.tiktok.com/@zerowastemalaysia?lang=en" target="_blank" class="social-link">t</a>
+            <a href="https://www.instagram.com/zerowastemalaysia_official/?hl=en" target="_blank" class="social-link">i</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nommoro by Group 7, Section 1. All rights reserved. Together, let's reduce food waste for a better tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+ 
+
+    <!-- Modal for enlarged image -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+<script src="article&tips.js"></script>
+	
+	  <script>
+
+    // Simple authentication system
+    function checkLoginStatus() {
+      const userData = localStorage.getItem('nomorroUser');
+      if (userData) {
+        const user = JSON.parse(userData);
+        showLoggedInState(user.name);
+      }
+    }
+
+    function showLoggedInState(userName) {
+      document.getElementById('loginBtn').style.display = 'none';
+      document.getElementById('userProfile').style.display = 'flex';
+      document.getElementById('welcomeText').textContent = `Hello, ${userName}!`;
+    }
+
+    function logout() {
+      localStorage.removeItem('nomorroUser');
+      document.getElementById('loginBtn').style.display = 'block';
+      document.getElementById('userProfile').style.display = 'none';
+    }
+
+    // Check login status when page loads
+    window.addEventListener('load', checkLoginStatus);
+  </script>
+  
+</body>
+</html>
+

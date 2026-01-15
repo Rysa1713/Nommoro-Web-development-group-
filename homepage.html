@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nommoro - Reduce Food Waste - G7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="homepagestyle.css">
+  
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <h1 class="logo"><a href="homepage.html">Nommoro</a></h1>
+        <div class="nav-menu">
+          <a href="homepage.html" class="nav-item active">Home</a>
+          <a href="article&tips.html" class="nav-item">Article & Tips</a>
+          <a href="expirycalculator.html" class="nav-item">Expiry Calculator</a>
+          <a href="recipes.html" class="nav-item">Recipes</a>
+          <a href="surplusmarket.html" class="nav-item">Surplus Market</a>
+        </div>
+      </div>
+      <div class="auth-section">
+        <button class="login-btn" id="loginBtn" onclick="window.location.href='login.html'">Login</button>
+        <div class="user-profile" id="userProfile" style="display: none;">
+          <div class="user-icon" onclick="window.location.href='userdashboard.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="35px" height="20px">
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="welcome-text">Welcome to</h1>
+      <h2 class="nommoro-title">NOMMORO</h2>
+      
+      <p class="hero-description">
+        Nommoro is your guide to smarter, food waste-free habits. We aim to reduce food waste through informed choices by empowering users with practical tools, everyday tips, and a community-driven marketplace, helping you save food, money, and the planet, one meal at a time.
+      </p>
+      <button class="explore-btn" onclick="scrollToSection('explore-section')">
+        Explore Us
+        <span class="arrow-down">↓</span>
+      </button>
+	  <div class="food-waste-image">
+        <img src="centreimage.png" alt="Food Waste" class="center-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section id="explore-section" class="get-started">
+    <div class="section-overlay">
+      <div class="container">
+        <h2 class="section-title">Get Started With Our Articles & Tips</h2>
+        <p class="section-subtitle">Discover practical ways to reduce food waste and save money</p>
+
+        <div class="content-grid">
+          <!-- Articles Section -->
+          <div class="articles-section">
+            <div class="article-card" onclick="window.location.href='article&tips.html'">
+              <div class="article-image">
+                <img src="foodlast.png" alt="Food Shelf Life Span">
+              </div>
+              <div class="article-content">
+                <h3>How Long Does Food Actually Last?</h3>
+                <p>Many people keep leftovers in the fridge for convenience, but how long are they actually safe to eat?</p>
+                <button class="read-more-btn">Click for more</button>
+              </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='a3.html'">
+              <div class="article-image">
+                <img src="expiry.jpg" alt="Expiry dates">
+              </div>
+              <div class="article-content">
+                <h3>Understanding Expiry Dates: Decode Expiry Dates</h3>
+                <p>Learn the difference and discover how much food you can safely consume.</p>
+                <button class="read-more-btn">Click for more</button>
+              </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='a5.html'">
+              <div class="article-image">
+                <img src="packagingworldinsights.jpg" alt="Food storage packaging">
+              </div>
+              <div class="article-content">
+                <h3>Packaging that Preserves: What are the types of packaging?</h3>
+                <p>Simple strategies from choosing the right packaging to store food that can make a big difference in your kitchen and your wallet.</p>
+                <button class="read-more-btn">Click for more</button>
+              </div>
+            </div>
+
+            <!-- Quick Access Icons moved here -->
+            <div class="quick-access">
+              <h4>Check Us Out!</h4>
+              <div class="quick-links">
+                <a href="expirycalculator.html" class="quick-link">
+                  <div class="quick-icon calculator">🧮</div>
+                  <span>Expiry Calculator</span>
+                </a>
+                <a href="recipes.html" class="quick-link">
+                  <div class="quick-icon recipes">📝</div>
+                  <span>Recipes</span>
+                </a>
+                <a href="surplusmarket.html" class="quick-link">
+                  <div class="quick-icon market">🛒</div>
+                  <span>Surplus Market</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Videos Section -->
+          <div class="sidebar">
+            <div class="video-card" onclick="openVideo('https://youtu.be/jDg8DQl7ZeQ')">
+              <div class="video-thumbnail">
+                <img src="https://img.youtube.com/vi/jDg8DQl7ZeQ/maxresdefault.jpg" alt="Food expiration dates video">
+                <div class="play-button">▶</div>
+                <div class="video-duration">12:30</div>
+              </div>
+              <h4>Food expiration dates don't mean what you think - Carolyn Beans</h4>
+            </div>
+
+            <div class="video-card" onclick="openVideo('https://youtu.be/kCeuP6yG64g')">
+              <div class="video-thumbnail">
+                <img src="https://img.youtube.com/vi/kCeuP6yG64g/maxresdefault.jpg" alt="Why I eat expired food video">
+                <div class="play-button">▶</div>
+                <div class="video-duration">8:15</div>
+              </div>
+              <h4>Why I eat "expired" food</h4>
+            </div>
+
+            <div class="video-card" onclick="openVideo('https://youtu.be/NJwJbVS_HQ8')">
+              <div class="video-thumbnail">
+                <img src="https://img.youtube.com/vi/NJwJbVS_HQ8/maxresdefault.jpg" alt="21 Ways To Reduce Food Waste video">
+                <div class="play-button">▶</div>
+                <div class="video-duration">15:42</div>
+              </div>
+              <h4>21 Ways To Reduce Food Waste (And Save Money)</h4>
+            </div>
+
+            <div class="video-card" onclick="openVideo('https://youtu.be/x3WcIXXJlcc')">
+              <div class="video-thumbnail">
+                <img src="https://img.youtube.com/vi/x3WcIXXJlcc/maxresdefault.jpg" alt="How to Reduce Food Waste at Home video">
+                <div class="play-button">▶</div>
+                <div class="video-duration">10:28</div>
+              </div>
+              <h4>How to Reduce Food Waste at Home</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Nommoro</h3>
+          <p>Building a sustainable future through mindful food consumption and waste reduction.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">About Nommoro</a></li>
+            <li><a href="https://globalgoals.org/goals/12-responsible-consumption-and-production/" target="_blank">SDG 12</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+			<li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="feedback.html">Feedback Form</a></li>
+            <li><a href="support.html">Help & Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/p/Reduce-Food-Waste-100068914386208/" target="_blank" class="social-link">f</a>
+            <a href="https://www.tiktok.com/@zerowastemalaysia?lang=en" target="_blank" class="social-link">t</a>
+            <a href="https://www.instagram.com/zerowastemalaysia_official/?hl=en" target="_blank" class="social-link">i</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nommoro by Group 7, Section 1. All rights reserved. Together, let's reduce food waste for a better tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function openVideo(url) {
+      window.open(url, '_blank');
+    }
+
+    // Simple authentication system
+    function checkLoginStatus() {
+      const userData = localStorage.getItem('nomorroUser');
+      if (userData) {
+        const user = JSON.parse(userData);
+        showLoggedInState(user.name);
+      }
+    }
+
+    function showLoggedInState(userName) {
+      document.getElementById('loginBtn').style.display = 'none';
+      document.getElementById('userProfile').style.display = 'flex';
+      document.getElementById('welcomeText').textContent = `Hello, ${userName}!`;
+    }
+
+    function logout() {
+      localStorage.removeItem('nomorroUser');
+      document.getElementById('loginBtn').style.display = 'block';
+      document.getElementById('userProfile').style.display = 'none';
+    }
+
+    // Check login status when page loads
+    window.addEventListener('load', checkLoginStatus);
+  </script>
+</body>
+</html>

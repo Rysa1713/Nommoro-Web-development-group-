@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expiry Calculator - Nommoro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-calculator">
+        <!-- Background image -->
+        <div class="background-image"></div>
+        
+        
+        <!-- Navigation Bar -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <h1 class="logo"><a href="articles&tips.html">Nommoro</a></h1>
+                    <div class="nav-menu">
+                        <a href="homepage.html" class="nav-item">Home</a>
+                        <a href="article&tips.html" class="nav-item">Article & Tips</a>
+                        <a href="expirycalculator.html" class="nav-item active">Expiry Calculator</a>
+                        <a href="recipes.html" class="nav-item">Recipes</a>
+                        <a href="surplusmarket.html" class="nav-item">Surplus Market</a>
+                    </div>
+                </div>
+                <div class="auth-section">
+                    <button class="login-btn" id="loginBtn" onclick="window.location.href='login.html'">Login</button>
+                    <div class="user-profile" id="userProfile" style="display: none;">
+                        <div class="user-icon" onclick="window.location.href='userdashboard.html'">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="35px" height="20px">
+                                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="main-grid">
+                <!-- Left side - Logo and Form -->
+                <div class="left-section">
+                    <h1>Nommoro</h1>
+                    <h2>Expiry Translator</h2>
+                    
+                    <!-- Form Card -->
+                    <div class="form-card">
+                        <div class="form-group">
+                            <label for="expiryDate" class="form-label">Expiry Date</label>
+                            <input type="date" id="expiryDate" class="form-input" placeholder="20/06/25">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="foodType" class="form-label">Food Type</label>
+                            <select id="foodType" class="form-select">
+                                <option value="">Select Food Type</option>
+                                <option value="Yogurt">Yogurt</option>
+                                <option value="Milk">Milk</option>
+                                <option value="Bread">Bread</option>
+                                <option value="Cheese">Cheese</option>
+                                <option value="Eggs">Eggs</option>
+                                <option value="Meat">Meat</option>
+                                <option value="Chicken">Chicken</option>
+                                <option value="Fish">Fish</option>
+                                <option value="Pork">Pork</option>
+                                <option value="Beef">Beef</option>
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Canned Goods">Canned Goods</option>
+                                <option value="Pasta">Pasta</option>
+                                <option value="Rice">Rice</option>
+                                <option value="Cereal">Cereal</option>
+                                <option value="Butter">Butter</option>
+                                <option value="Cream">Cream</option>
+                                <option value="Ice Cream">Ice Cream</option>
+                                <option value="Frozen Food">Frozen Food</option>
+                                <option value="Leftovers">Leftovers</option>
+                                <option value="Condiments">Condiments</option>
+                                <option value="Snacks">Snacks</option>
+                                <option value="Beverages">Beverages</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="brand" class="form-label">Brand</label>
+                            <select id="brand" class="form-select">
+                                <option value="">Select Brand</option>
+                                <option value="Anchor">Anchor</option>
+                                <option value="Marigold">Marigold</option>
+                                <option value="Magnolia">Magnolia</option>
+                                <option value="Meiji">Meiji</option>
+                                <option value="Dutch Lady">Dutch Lady</option>
+                                <option value="F&N">F&N</option>
+                                <option value="Pokka">Pokka</option>
+                                <option value="Yeo's">Yeo's</option>
+                                <option value="Gardenia">Gardenia</option>
+                                <option value="Sunshine">Sunshine</option>
+                                <option value="Massimo">Massimo</option>
+                                <option value="High5">High5</option>
+                                <option value="Kraft">Kraft</option>
+                                <option value="President">President</option>
+                                <option value="Laughing Cow">Laughing Cow</option>
+                                <option value="Bega">Bega</option>
+                                <option value="Nestle">Nestle</option>
+                                <option value="Kellogg's">Kellogg's</option>
+                                <option value="Quaker">Quaker</option>
+                                <option value="Uncle Ben's">Uncle Ben's</option>
+                                <option value="Barilla">Barilla</option>
+                                <option value="San Remo">San Remo</option>
+                                <option value="Ayam">Ayam</option>
+                                <option value="CP">CP</option>
+                                <option value="Tesco">Tesco</option>
+                                <option value="NTUC">NTUC</option>
+                                <option value="Cold Storage">Cold Storage</option>
+                                <option value="Sheng Siong">Sheng Siong</option>
+                                <option value="Giant">Giant</option>
+                                <option value="Prime">Prime</option>
+                                <option value="Generic">Generic</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side - Check Button and Result -->
+                <div class="right-section">
+                    <button id="checkButton" class="check-button" onclick="calculateExpiry()">
+                        Check
+                    </button>
+                    
+                    <div id="resultCard" class="result-card" style="display: none;">
+                        <div class="result-header">
+                            <svg class="result-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h3 id="resultTitle" class="result-title"></h3>
+                        </div>
+                        <p id="resultDescription" class="result-description"></p>
+                        <div class="result-sources">
+                            <p>Reliable sources for food safety:</p>
+                            <div class="result-links">
+                                <div class="tooltip">
+                                    <a href="https://www.moh.gov.sg/food-safety" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="result-link">
+                                        Ministry of Health (MOH)
+                                    </a>
+                                    <span class="tooltip-content">Singapore's official food safety guidelines and regulations</span>
+                                </div>
+                                
+                                <div class="tooltip">
+                                    <a href="https://www.who.int/news-room/fact-sheets/detail/food-safety" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="result-link">
+                                        World Health Organization (WHO)
+                                    </a>
+                                    <span class="tooltip-content">Global food safety standards and health recommendations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Nommoro</h3>
+                        <p>Building a sustainable future through mindful food consumption and waste reduction.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="homepage.html">About Nommoro</a></li>
+                            <li><a href="https://globalgoals.org/goals/12-responsible-consumption-and-production/" target="_blank">SDG 12</a></li>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="feedback.html">Feedback Form</a></li>
+                            <li><a href="support.html">Help & Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/p/Reduce-Food-Waste-100068914386208/" target="_blank" class="social-link">f</a>
+                            <a href="https://www.tiktok.com/@zerowastemalaysia?lang=en" target="_blank" class="social-link">t</a>
+                            <a href="https://www.instagram.com/zerowastemalaysia_official/?hl=en" target="_blank" class="social-link">i</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 Nommoro by Group 7, Section 1. All rights reserved. Together, let's reduce food waste for a better tomorrow.</p>
+                </div>
+            </div>
+        </footer>
+
+<script src="calculator.js"></script>
+        
+        <script>
+            // Simple authentication system
+            function checkLoginStatus() {
+                const userData = localStorage.getItem('nomorroUser');
+                if (userData) {
+                    const user = JSON.parse(userData);
+                    showLoggedInState(user.name);
+                }
+            }
+
+            function showLoggedInState(userName) {
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('userProfile').style.display = 'flex';
+                document.getElementById('welcomeText').textContent = `Hello, ${userName}!`;
+            }
+
+            function logout() {
+                localStorage.removeItem('nomorroUser');
+                document.getElementById('loginBtn').style.display = 'block';
+                document.getElementById('userProfile').style.display = 'none';
+            }
+
+            // Check login status when page loads
+            window.addEventListener('load', checkLoginStatus);
+        </script>
+    </div>
+</body>
+</html>
+

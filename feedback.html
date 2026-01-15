@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   
+
+  <div class="privacy-container">
+    <div class="privacy-card">
+       <!-- "Go Back" link that takes the user to the previous page they visited -->
+       <a href="javascript:history.back()" class="back-link">← Go Back</a>
+
+      <h1>Feedback</h1>
+      <p class="intro">We'd love to hear your thoughts!</p>
+
+      <form id="feedbackForm" class="feedback-form">
+        <div class="form-group">
+          <label for="message">Your Feedback *</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write something..." required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Confirmation Overlay -->
+  <div id="confirmationOverlay" class="overlay">
+    <div class="overlay-box">
+      <div class="checkmark">✔️</div>
+      <p>Feedback Submitted!</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+    const overlay = document.getElementById('confirmationOverlay');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // prevent real submission
+
+      // Show the confirmation
+      overlay.style.display = 'flex';
+
+      // Optional: clear form
+      form.reset();
+
+      // Hide overlay after 2.5 seconds
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 2500);
+    });
+  </script>
+</body>
+</html>

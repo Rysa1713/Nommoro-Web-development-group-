@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Tips - Nommoro</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="a3.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-articles">
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <h1 class="logo"><a href="articles&tips.html">Nommoro</a></h1>
+        <div class="nav-menu">
+          <a href="homepage.html" class="nav-item">Home</a>
+          <a href="article&tips.html" class="nav-item active">Article & Tips</a>
+          <a href="expirycalculator.html" class="nav-item">Expiry Calculator</a>
+          <a href="recipes.html" class="nav-item">Recipes</a>
+          <a href="surplusmarket.html" class="nav-item">Surplus Market</a>
+        </div>
+      </div>
+      <div class="auth-section">
+        <button class="login-btn" id="loginBtn" onclick="window.location.href='login.html'">Login</button>
+        <div class="user-profile" id="userProfile" style="display: none;">
+          <div class="user-icon" onclick="window.location.href='userdashboard.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="35px" height="20px">
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="grid">
+                <!-- Left Column - Main Article -->
+                <div>
+                    <div class="main-article">
+                        <h1 class="article-title">Decode Expiry Dates</h1>
+                        <p class="article-date">-July 12th 2025</p>
+                        <hr class="article-divider">
+                        
+                        <!-- Restructured content layout -->
+                        <div class="article-content">
+                            <!-- First paragraph content -->
+                            <div class="content-section">
+                                <h3 class="support-title">Don't Throw Away Good Food - Know Your Date Labels!</h3>
+                                <p class="support-text">
+                                    Millions of tonnes of food are wasted every year, often because people don't understand what date labels really mean. 
+                                    The two main types of date labels in the UK are 'best before' and 'use by' dates, and knowing the difference 
+                                    can help you save money and reduce food waste.
+                                    <br><br>
+                                    Most food is safe to eat after the 'best before' date, but may not be at its best quality. However, 
+                                    food should not be eaten after its 'use by' date as this could put your health at risk.
+                                </p>
+                            </div>
+
+                            <!-- Banner image about date labels -->
+                            <div class="date-banner">
+                                <img src="Human Focus.jpg" alt="Best Before vs Use By Date Labels Guide - Understanding Food Safety Labels" class="banner-image" id="fridgeImage">
+                            </div>
+
+                            <!-- Date labels education section -->
+                            <div class="date-education-section">
+                                <h4 class="tip-title">🏷️ Understanding Date Labels: Best Before vs Use By</h4>
+                                <div class="tip-content">
+                                    <p class="tip-text">
+                                        <strong>Best Before:</strong> This is about quality, not safety. Food is still safe to eat after this date, 
+                                        but may not be at its best quality. Use your judgment - if it looks, smells, and tastes fine, it's likely okay.
+                                        <br><br>
+                                        <strong>Use By:</strong> This is about safety. Don't eat food after this date as it could be unsafe and 
+                                        cause food poisoning, even if it looks and smells fine.
+                                        <br><br>
+                                        <strong>Display Until/Sell By:</strong> These are instructions for shop staff, not for home use. 
+                                        You can still eat the food after this date if it's within the 'use by' or 'best before' date.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Practical tips section -->
+                            <div class="content-section">
+                                <h3 class="support-title">Smart Tips to Reduce Food Waste</h3>
+                                <p class="support-text">
+                                    <strong>Check before you chuck:</strong> Look, smell, and taste (if appropriate) before throwing food away. 
+                                    Many foods past their 'best before' date are perfectly fine to eat.
+                                    <br><br>
+                                    <strong>Plan your meals:</strong> Buy only what you need and use food in date order - older items first.
+                                    <br><br>
+                                    <strong>Store food properly:</strong> Keep your fridge at 5°C or below and follow storage instructions 
+                                    to help food last longer and stay safe.
+                                    <br><br>
+                                    <strong>Freeze before the date:</strong> You can freeze most foods before their 'use by' date. 
+                                    Remember to defrost thoroughly and use within 24 hours of defrosting.
+                                    <br><br>
+                                    For more detailed guidance, visit the 
+                                    <a href="https://www.food.gov.uk/safety-hygiene/best-before-and-use-by-dates" target="_blank" rel="noopener noreferrer" class="support-link">
+                                        UK Food Standards Agency
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- Right Column - Sidebar -->
+                <div class="sidebar">
+                    <div class="author-section">
+                        <p class="author-label">By:</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span class="author-name">UK Food Standards Agency</span>
+                        </div>
+                    </div>
+
+                    <!-- Support Cards -->
+                    <div class="support-card">
+                        <h3 class="support-card-title">Save Money, Save Food</h3>
+                        <p class="support-card-text">
+                            Here's how you can extend your food shelf life!
+                        </p>
+                        <a href="a1.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Go Green!</h3>
+                        <p class="support-card-text">
+                            Compost food scraps like veggie peels and eggshells to reduce waste!
+                        </p>
+                        <a href="a2.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">How Long Does Food Actually Last?</h3>
+                        <p class="support-card-text">
+                            Here's how you can preserve your food longer!
+                        </p>
+                        <a href="article&tips.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Meal Planning Made Easy</h3>
+                        <p class="support-card-text">
+                            Step-by-step guide to weekly meal planning.
+                        </p>
+                        <a href="a4.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Packaging That Preserves: What Actually Works?<h3>
+                        <p class="support-card-text">
+                            Compare types of packaging and learn DIY tips!
+                        </p>
+                        <a href="a5.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Nommoro</h3>
+          <p>Building a sustainable future through mindful food consumption and waste reduction.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">About Nommoro</a></li>
+            <li><a href="https://globalgoals.org/goals/12-responsible-consumption-and-production/" target="_blank">SDG 12</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+			<li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="feedback.html">Feedback Form</a></li>
+            <li><a href="support.html">Help & Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/p/Reduce-Food-Waste-100068914386208/" target="_blank" class="social-link">f</a>
+            <a href="https://www.tiktok.com/@zerowastemalaysia?lang=en" target="_blank" class="social-link">t</a>
+            <a href="https://www.instagram.com/zerowastemalaysia_official/?hl=en" target="_blank" class="social-link">i</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nommoro by Group 7, Section 1. All rights reserved. Together, let's reduce food waste for a better tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+
+        <!-- Modal for enlarged image -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption">Best Before vs Use By Date Labels Guide</div>
+        </div>
+    </div>
+
+<script src="article&tips.js"></script>
+
+	  <script>
+
+    // Simple authentication system
+    function checkLoginStatus() {
+      const userData = localStorage.getItem('nomorroUser');
+      if (userData) {
+        const user = JSON.parse(userData);
+        showLoggedInState(user.name);
+      }
+    }
+
+    function showLoggedInState(userName) {
+      document.getElementById('loginBtn').style.display = 'none';
+      document.getElementById('userProfile').style.display = 'flex';
+      document.getElementById('welcomeText').textContent = `Hello, ${userName}!`;
+    }
+
+    function logout() {
+      localStorage.removeItem('nomorroUser');
+      document.getElementById('loginBtn').style.display = 'block';
+      document.getElementById('userProfile').style.display = 'none';
+    }
+
+    // Check login status when page loads
+    window.addEventListener('load', checkLoginStatus);
+  </script>
+
+</body>
+</html>
+

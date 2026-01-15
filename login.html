@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Nommoro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h1 class="logo">Nommoro</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" class="auth-btn">Login</button>
+      <div class="error-message" id="errorMessage"></div>
+      <div class="success-message" id="successMessage"></div>
+    </form>
+    <div class="switch-link">
+      <p>Don't have an account? <a href="sign-up.html">Sign up here</a></p>
+    </div>
+    <div class="back-link">
+      <a href="homepage.html">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+      const successMessage = document.getElementById('successMessage');
+      
+      // Hide previous messages
+      errorMessage.style.display = 'none';
+      successMessage.style.display = 'none';
+      
+      // Get stored users from localStorage
+      const users = JSON.parse(localStorage.getItem('nomorroUsers') || '[]');
+      
+      // Find user
+      const user = users.find(u => u.username === username && u.password === password);
+      
+      if (user) {
+        // Store current user session
+        localStorage.setItem('nomorroUser', JSON.stringify(user));
+        
+        // Show success message
+        successMessage.textContent = 'Login successful! Redirecting...';
+        successMessage.style.display = 'block';
+        
+        // Redirect after a short delay
+        setTimeout(() => {
+          window.location.href = 'homepage.html';
+        }, 1500);
+      } else {
+        errorMessage.textContent = 'Invalid username or password. Please try again.';
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

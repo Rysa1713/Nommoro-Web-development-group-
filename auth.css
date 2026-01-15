@@ -1,0 +1,167 @@
+/* Auth Pages Shared Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(rgba(87, 69, 49, 0.7), rgba(87, 69, 49, 0.7)), 
+              url('homebackground.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+.auth-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+}
+
+.logo {
+  font-family: 'Shrikhand', cursive;
+  font-size: 2rem;
+  color: #DB5B14;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.form-group.full-width {
+  flex: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #574531;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #DB5B14;
+}
+
+.auth-btn {
+  width: 100%;
+  background-color: #DB5B14;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.auth-btn:hover {
+  background-color: #C84300;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.back-link a {
+  color: #DB5B14;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #C84300;
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.switch-link a {
+  color: #DB5B14;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.switch-link a:hover {
+  color: #C84300;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: none;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border-left: 3px solid #e74c3c;
+}
+
+.success-message {
+  color: #27ae60;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: none;
+  background-color: rgba(39, 174, 96, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border-left: 3px solid #27ae60;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .auth-container {
+    padding: 1.5rem;
+  }
+}

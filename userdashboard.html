@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard - Nommoro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/database.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <h1 class="logo"><a href="homepage.html">Nommoro</a></h1>
+          <div class="nav-menu">
+            <a href="homepage.html" class="nav-item">Home</a>
+            <a href="article&tips.html" class="nav-item">Article & Tips</a>
+            <a href="expirycalculator.html" class="nav-item">Expiry Calculator</a>
+            <a href="recipes.html" class="nav-item">Recipes</a>
+            <a href="surplusmarket.html" class="nav-item">Surplus Market</a>
+          </div>
+        </div>
+        <div class="auth-section">
+          <div class="user-profile" id="userProfile">
+            <div class="user-icon" onclick="window.location.href='userdashboard.html'">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="35px" height="20px">
+                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Dashboard Layout -->
+    <main>
+     <!-- To-Do List -->
+<section class="todolist">
+  <h2>Weekly To-Do List</h2>
+  <ul class="todo-list" id="staticTodos">
+    <li>
+      <input type="checkbox">
+      Move soon-to-expire items to the front 🥫
+      <button class="delete-btn" onclick="deleteTodo(this)">✖</button>
+    </li>
+    <li>
+      <input type="checkbox">
+      Make stir-fry with wilting veggies 🥦🥕
+      <button class="delete-btn" onclick="deleteTodo(this)">✖</button>
+    </li>
+  </ul>
+  <ul id="extraTodos"></ul>
+  <div id="todoInputContainer" style="display: none; margin-top: 0.5rem;">
+    <input type="text" id="todoInput" placeholder="Add a new task..." />
+    <button onclick="addTodo()">Add</button>
+  </div>
+  <button id="toggleInputBtn" onclick="toggleInput()">+ Add Task</button>
+</section>
+
+
+      <!-- Progress Chart -->
+      <section class="progress">
+        <h2>How Much Food Saved</h2>
+        <div class="progress-content">
+          <div class="progress-chart-container">
+            <canvas id="foodSavingsChart"></canvas>
+          </div>
+          <div class="charttable">
+            <div class="row"><span>🏠 Home</span><span>20%</span></div>
+            <div class="row"><span>🥗 Nutrition </span><span>30%</span></div>
+            <div class="row"><span>🍽 Utensils</span><span>30%</span></div>
+            <div class="row"><span>💰 Savings</span><span>20%</span></div>
+          </div>
+        </div>
+      </section>
+
+ <section class="surplus">
+  <h2>Today's Surplus Picks</h2>
+  <div class="surplus-preview">
+    <div class="surplus-item">
+      <p>🥕 Carrots - RM4.19 / 1kg</p>
+    </div>
+    <div class="surplus-item">
+      <p>🧃Orange juice - RM2.79 / bottle</p>
+    </div>
+    <div class="surplus-item">
+      <p>🥯Bagels - RM3.00 /piece</p>
+    </div>
+    <div class="surplus-item">
+      <p>🥬 Spinach - RM4.24 / head</p>
+    </div>
+    <div class="surplus-item">
+      <p>🍗 Chicken Breast - RM12.92 / 2 pieces</p>
+    </div>
+    <div class="surplus-item">
+      <p>🍈Durian - RM8.50  /piece</p>
+    </div>
+    <a class="surplus-link" href="surplusmarket.html">See All Deals →</a>
+  </div>
+</section>
+
+
+
+      <!-- Profile Sidebar -->
+   <aside class="profile">
+  <div class="user-avatar">
+    <img src="profile.png" alt="Profile Photo">
+  </div>
+  <div class="user-info">
+    <p id="userNameDisplay">Loading...</p>
+    <p id="userEmail">Loading...</p>
+    <p id="userLocation">Loading...</p>
+  </div>
+
+  <ul>
+    <li><a href="edit-profile.html">Edit Profile</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms & Conditions</a></li>
+    <li><a href="support.html">Help & Support</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+
+  <button onclick="logout()">Logout</button>
+</aside>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3 style="font-family: 'Shrikhand', cursive;">Nommoro</h3>
+            <p>Building a sustainable future through mindful food consumption and waste reduction.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="homepage.html">About Nommoro</a></li>
+              <li><a href="https://globalgoals.org/goals/12-responsible-consumption-and-production/" target="_blank">SDG 12</a></li>
+              <li><a href="terms.html">Terms & Conditions</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="feedback.html">Feedback Form</a></li>
+              <li><a href="support.html">Help & Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/p/Reduce-Food-Waste-100068914386208/" target="_blank" class="social-link">f</a>
+              <a href="https://www.tiktok.com/@zerowastemalaysia?lang=en" target="_blank" class="social-link">t</a>
+              <a href="https://www.instagram.com/zerowastemalaysia_official/?hl=en" target="_blank" class="social-link">i</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Nommoro by Group 7, Section 1. All rights reserved. Together, let's reduce food waste for a better tomorrow.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+ 
+
+ <script>
+  let currentUser = null;
+
+  window.onload = async () => {
+    // Check login
+    const userData = localStorage.getItem('nomorroUser');
+    if (!userData) {
+      window.location.href = 'login.html';
+      return;
+    }
+
+    currentUser = JSON.parse(userData);
+
+    // Display user profile info
+    document.getElementById("userNameDisplay").textContent = currentUser.name;
+    document.getElementById("userEmail").textContent = currentUser.email;
+    document.getElementById("userLocation").textContent = `${currentUser.city}, ${currentUser.country}`;
+
+    // Initialize chart after DOM is ready
+    const ctx = document.getElementById('foodSavingsChart');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Home', 'Nutrition', 'Utensils', 'Savings'],
+          datasets: [{
+            data: [20, 30, 30, 20],
+            backgroundColor: ['#ff6384', '#36a2eb', '#4bc0c0', '#00d084'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          cutout: '60%',
+          plugins: {
+            legend: {
+              display: false
+            }
+          }
+        }
+      });
+    } else {
+      console.warn('Chart canvas not found!');
+    }
+  };
+
+  function toggleInput() {
+    const inputContainer = document.getElementById("todoInputContainer");
+    inputContainer.style.display = inputContainer.style.display === "none" ? "block" : "none";
+  }
+
+  function addTodo() {
+    const input = document.getElementById("todoInput");
+    const value = input.value.trim();
+    if (!value) return;
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <input type="checkbox">
+      <span>${value}</span>
+      <button class="delete-btn" onclick="deleteTodo(this)">✖</button>
+    `;
+    document.getElementById("extraTodos").prepend(li);
+    input.value = "";
+  }
+
+  function deleteTodo(button) {
+    const li = button.parentElement;
+    li.remove();
+  }
+
+  function logout() {
+    localStorage.removeItem('nomorroUser');
+    window.location.href = 'homepage.html';
+  }
+</script>
+
+
+
+
+ 
+</body>
+</html>

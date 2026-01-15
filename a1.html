@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Tips - Nommoro</title>
+    <meta name="description" content="Food safety articles and tips to reduce waste and extend shelf life" />
+    <meta name="author" content="Nommoro" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="a1.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-articles">
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <h1 class="logo"><a href="homepage.html">Nommoro</a></h1>
+        <div class="nav-menu">
+          <a href="homepage.html" class="nav-item">Home</a>
+          <a href="article&tips.html" class="nav-item active">Article & Tips</a>
+          <a href="expirycalculator.html" class="nav-item">Expiry Calculator</a>
+          <a href="recipes.html" class="nav-item">Recipes</a>
+          <a href="surplusmarket.html" class="nav-item">Surplus Market</a>
+        </div>
+      </div>
+      <div class="auth-section">
+        <button class="login-btn" id="loginBtn" onclick="window.location.href='login.html'">Login</button>
+        <div class="user-profile" id="userProfile" style="display: none;">
+          <div class="user-icon" onclick="window.location.href='userdashboard.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="35px" height="20px">
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="grid">
+                <!-- Left Column - Main Article -->
+                <div>
+                    <div class="main-article">
+                        <h1 class="article-title">Save Money, Save Food</h1>
+                        <p class="article-date">-July 12th 2025</p>
+                        <hr class="article-divider">
+                        
+                        <!-- L-shaped flexbox container with photo on left -->
+                        <div class="l-shaped-container">
+                            <!-- Top section with image on the LEFT -->
+                            <div class="top-section">
+                                <!-- Image moved to left side -->
+                                <div class="infographic">
+                                    <img src="Kansas State University.jpg" alt="Source: KSU" class="enlarge-image" id="fridgeImage">
+                                </div>
+                                
+                                <!-- Content moved to right side -->
+                                <div class="support-box-container">
+                                    <div class="support-content">
+                                        <h3 class="support-title">Smart Tips To Save Money On Food</h3>
+                                        <p class="support-text">
+                                            Nourishing yourself and your family doesn’t need to strain your budget. By adopting a few easy, smart habits, you can enjoy tasty meals while keeping costs under control.
+											From planning meals and freezing leftovers to using store rewards and growing your own herbs, small actions can lead to big savings.
+											These strategies not only help you save money, but also reduce food waste, improve nutrition, and make you more mindful about what you consume. 
+											Whether you’re a student, a busy parent, or just trying to stretch your groceries a little further—these tips are for you.
+                                            <br><br>
+                                            
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom section that extends full width -->
+                            <div class="bottom-section">
+                                <div class="support-content">
+                                    <p class="support-text">
+                                        <strong>1. Plan your meals ahead:</strong>
+											Create a weekly meal plan and shopping list to avoid waste—unused food is the same as money thrown away
+											<br>
+											<strong>2. Buy in bulk:</strong>
+											Items like meats, rice, and frozen goods often come at a discount when bought in larger quantities. Freeze portions for later use
+											<br>
+											<strong>3. Freeze leftovers:</strong>
+											If you can’t finish a meal within a couple of days, freeze it! Many dishes—like soups, casseroles, 
+											and cooked vegetables—freeze and reheat beautifully
+											<br>
+											<strong>4. Use coupons:</strong>
+											You don’t need to go overboard—just check the coupons you already receive and apply them to items you regularly buy
+											<br>
+											<strong>5.Join store reward programs:</strong>
+											Many grocery stores offer discounts and perks to loyalty members. These rewards add up over time
+											<br><br>
+											Saving on food doesn't require dramatic changes—just smart habits. Whether you're planning meals, freezing leftovers, brewing coffee at home, or growing simple produce, 
+											these strategies can lead to significant savings over time. Every small action compounds, helping you eat well, 
+											spend less, and waste less. Try a few of these this week and watch your grocery bill shrink!
+											
+                                        <a href="https://www.brightbridge.com/tools/new-blog/10-simple-strategies-for-saving-money-on-food" target="_blank" rel="noopener noreferrer" class="support-link">
+                                            BrightBridge
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Storage Guide Image (replacing table) -->
+                        <div class="storage-guide">
+
+                            <div class="guide-image-container">
+                                <img src="herogo.png" alt="Source: Hero Go" class="storage-timeline-image">
+							<h4> Source: Hero Go</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Sidebar -->
+                <div class="sidebar">
+                    <div class="author-section">
+                        <p class="author-label">By:</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span class="author-name">Bright Bridge</span>
+                        </div>
+                    </div>
+
+                    <!-- Support Cards -->
+                    <div class="support-card">
+                        <h3 class="support-card-title">How Long Does Food Actually Last?</h3>
+                        <p class="support-card-text">
+                            Here's how you can preserve your food longer!
+                        </p>
+                        <a href="article&tips.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Go Green!</h3>
+                        <p class="support-card-text">
+                            Compost food scraps like veggie peels and eggshells to reduce waste!
+                        </p>
+                        <a href="a2.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Decode Expiry Dates</h3>
+                        <p class="support-card-text">
+                            Confused by "Best Before" vs. "Use By"? Learn the key differences and how to make 
+                            smart decisions without wasting perfectly good food.
+                        </p>
+                        <a href="a3.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Meal Planning Made Easy</h3>
+                        <p class="support-card-text">
+                            Step-by-step guide to weekly meal planning.
+                        </p>
+                        <a href="a4.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3 class="support-card-title">Packaging That Preserves: What Actually Works?<h3>
+                        <p class="support-card-text">
+                            Compare types of packaging and learn DIY tips!
+                        </p>
+                        <a href="a5.html" class="support-card-button">
+                            Click for more
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Nommoro</h3>
+          <p>Building a sustainable future through mindful food consumption and waste reduction.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">About Nommoro</a></li>
+            <li><a href="https://globalgoals.org/goals/12-responsible-consumption-and-production/" target="_blank">SDG 12</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+			<li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="feedback.html">Feedback Form</a></li>
+            <li><a href="support.html">Help & Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/p/Reduce-Food-Waste-100068914386208/" target="_blank" class="social-link">f</a>
+            <a href="https://www.tiktok.com/@zerowastemalaysia?lang=en" target="_blank" class="social-link">t</a>
+            <a href="https://www.instagram.com/zerowastemalaysia_official/?hl=en" target="_blank" class="social-link">i</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nommoro by Group 7, Section 1. Together, let's reduce food waste for a better tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+  
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div id="caption"></div>
+</div>
+
+<script src="article&tips.js"></script>
+	
+	  <script>
+
+    // Simple authentication system
+    function checkLoginStatus() {
+      const userData = localStorage.getItem('nomorroUser');
+      if (userData) {
+        const user = JSON.parse(userData);
+        showLoggedInState(user.name);
+      }
+    }
+
+    function showLoggedInState(userName) {
+      document.getElementById('loginBtn').style.display = 'none';
+      document.getElementById('userProfile').style.display = 'flex';
+      document.getElementById('welcomeText').textContent = `Hello, ${userName}!`;
+    }
+
+    function logout() {
+      localStorage.removeItem('nomorroUser');
+      document.getElementById('loginBtn').style.display = 'block';
+      document.getElementById('userProfile').style.display = 'none';
+    }
+
+    // Check login status when page loads
+    window.addEventListener('load', checkLoginStatus);
+  </script>
+  
+</body>
+</html>

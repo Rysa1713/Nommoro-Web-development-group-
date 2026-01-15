@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - Nommoro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css">
+  <script src="country-city-data.js"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <h1 class="logo">Join Nommoro</h1>
+    <form id="signupForm">
+      <div class="form-group full-width">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group full-width">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group full-width">
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" name="country" required onchange="updateCityDropdown(this.value)">
+            <option value="">Select Country</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <select id="city" name="city" required disabled>
+            <option value="">Select City</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group full-width">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group full-width">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required minlength="6">
+      </div>
+      <div class="form-group full-width">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+      <button type="submit" class="auth-btn">Create Account</button>
+      <div class="error-message" id="errorMessage"></div>
+      <div class="success-message" id="successMessage"></div>
+    </form>
+    <div class="switch-link">
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+    <div class="back-link">
+      <a href="homepage.html">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    // Populate country dropdown when page loads
+    window.addEventListener('load', function() {
+      populateCountryDropdown();
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const userData = Object.fromEntries(formData.entries());
+      const errorMessage = document.getElementById('errorMessage');
+      const successMessage = document.getElementById('successMessage');
+      
+      // Hide previous messages
+      errorMessage.style.display = 'none';
+      successMessage.style.display = 'none';
+      
+      // Basic validation
+      if (userData.password.length < 6) {
+        errorMessage.textContent = 'Password must be at least 6 characters long.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      // Validate passwords match
+      if (userData.password !== userData.confirmPassword) {
+        errorMessage.textContent = 'Passwords do not match. Please try again.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      // Validate country and city selection
+      if (!userData.country) {
+        errorMessage.textContent = 'Please select a country.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      if (!userData.city) {
+        errorMessage.textContent = 'Please select a city.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      // Get existing users
+      const users = JSON.parse(localStorage.getItem('nomorroUsers') || '[]');
+      
+      // Check if username or email already exists
+      if (users.find(u => u.username === userData.username)) {
+        errorMessage.textContent = 'Username already exists. Please choose a different one.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      if (users.find(u => u.email === userData.email)) {
+        errorMessage.textContent = 'Email already registered. Please use a different email.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      // Remove confirm password from stored data
+      delete userData.confirmPassword;
+      
+      // Add timestamp for user registration
+      userData.registeredAt = new Date().toISOString();
+      
+      // Add user to storage
+      users.push(userData);
+      localStorage.setItem('nomorroUsers', JSON.stringify(users));
+      
+      // Show success message
+      successMessage.textContent = 'Account created successfully! Redirecting to login...';
+      successMessage.style.display = 'block';
+      
+      // Redirect to login page after a short delay
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

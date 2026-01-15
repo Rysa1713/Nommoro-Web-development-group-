@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fef5ec;
+      margin: 0;
+      padding: 0;
+    }
+
+    .edit-container {
+      max-width: 600px;
+      margin: 80px auto;
+      background-color: #fffaf4;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0c3a0;
+    }
+
+    .edit-container h2 {
+      text-align: center;
+      color: #DB5B14;
+      margin-bottom: 1rem;
+    }
+
+    .edit-container label {
+      display: block;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #574531;
+    }
+
+    .edit-container input,
+    .edit-container textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background-color: #fffaf0;
+    }
+
+    .edit-container button {
+      margin-top: 1.5rem;
+      background-color: #DB5B14;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .edit-container button:hover {
+      background-color: #c44700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="edit-container">
+    <h2>Edit Profile</h2>
+    <form id="editProfileForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <button type="submit">Save Changes</button>
+
+
+    </form>
+  </div>
+
+  <script>
+  // Load user from localStorage and pre-fill the form
+  window.onload = () => {
+    const userData = localStorage.getItem("nomorroUser");
+    if (!userData) {
+      return;
+    }
+
+    const user = JSON.parse(userData);
+    document.getElementById("name").value = user.name || "";
+    document.getElementById("email").value = user.email || "";
+  };
+
+  // Save updates back into localStorage under 'nomorroUser'
+  document.getElementById("editProfileForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    const userData = localStorage.getItem("nomorroUser");
+    if (!userData) {
+      alert("User session not found.");
+      return;
+    }
+
+    const user = JSON.parse(userData);
+    const updatedUser = {
+      ...user,
+      name,
+      email
+    };
+
+    localStorage.setItem("nomorroUser", JSON.stringify(updatedUser));
+
+    alert("Profile updated successfully!");
+    window.location.href = "userdashboard.html";
+  });
+</script>
+
+
+</body>
+</html>
+

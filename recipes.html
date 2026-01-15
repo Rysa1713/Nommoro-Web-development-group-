@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Nommoro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href= "recipesstyles.css" >
+</head>
+<body>
+  
+   <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <h1 class="logo"><a href="homepage.html">Nommoro</a></h1>
+        <div class="nav-menu">
+          <a href="homepage.html" class="nav-item">Home</a>
+          <a href="article&tips.html" class="nav-item">Article & Tips</a>
+          <a href="expirycalculator.html" class="nav-item">Expiry Calculator</a>
+          <a href="recipes.html" class="nav-item active">Recipes</a>
+          <a href="surplusmarket.html" class="nav-item">Surplus Market</a>
+        </div>
+      </div>
+      <div class="auth-section">
+        <button class="login-btn" id="loginBtn" onclick="window.location.href='login.html'">Login</button>
+        <div class="user-profile" id="userProfile" style="display: none;">
+          <div class="user-icon" onclick="window.location.href='userdashboard.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="35px" height="20px">
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+            </svg>
+        </div>
+      </div>
+    </div><!-- Closing nav-container -->
+  </nav> 
+    
+<!-- Recipe Search Page -->
+<div class="recipe-page">
+  <div class="recipe-container">
+    <!-- Left Sidebar - Pantry Ingredient Selector -->
+    <aside class="left-sidebar">
+      <div class="ingredient-filter">
+        <h3 data-key="pantryIngredients">Pantry Ingredients</h3>
+        <div id="clearPantryContainer"></div>
+          
+        <!-- Dairy Category -->
+        <div class="filter-category">
+          <div class="category-header" onclick="toggleCategory('dairy')">
+            <span data-key="dairy">Dairy</span>
+            <span class="count" id="dairyCount">(0/8)</span>
+            <span class="arrow">▼</span>
+              
+          </div>
+          <div class="category-items" id="dairy">
+            <label><input type="checkbox" value="milk"> <span data-key="milk">Milk</span></label>
+            <label><input type="checkbox" value="cheese"> <span data-key="cheese">Cheese</span></label>
+            <label><input type="checkbox" value="butter"> <span data-key="butter">Butter</span></label>
+            <label><input type="checkbox" value="yogurt"> <span data-key="yogurt">Yogurt</span></label>
+            <label><input type="checkbox" value="cream"> <span data-key="cream">Cream</span></label>
+            <label><input type="checkbox" value="sour-cream"> <span data-key="sourCream">Sour Cream</span></label>
+            <label><input type="checkbox" value="cottage-cheese"> <span data-key="cottageCheese">Cottage Cheese</span></label>
+            <label><input type="checkbox" value="mozzarella"> <span data-key="mozzarella">Mozzarella</span></label>
+          </div>
+        </div>
+          
+        <!-- Vegetables Category -->
+        <div class="filter-category">
+          <div class="category-header" onclick="toggleCategory('vegetables')">
+            <span data-key="vegetables">Vegetables</span>
+            <span class="count" id="vegetablesCount">(0/12)</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="category-items" id="vegetables">
+            <label><input type="checkbox" value="tomatoes"> <span data-key="tomatoes">Tomatoes</span></label>
+            <label><input type="checkbox" value="onions"> <span data-key="onions">Onions</span></label>
+            <label><input type="checkbox" value="garlic"> <span data-key="garlic">Garlic</span></label>
+            <label><input type="checkbox" value="carrots"> <span data-key="carrots">Carrots</span></label>
+            <label><input type="checkbox" value="bell-peppers"> <span data-key="bellPeppers">Bell Peppers</span></label>
+            <label><input type="checkbox" value="broccoli"> <span data-key="broccoli">Broccoli</span></label>
+            <label><input type="checkbox" value="spinach"> <span data-key="spinach">Spinach</span></label>
+            <label><input type="checkbox" value="mushrooms"> <span data-key="mushrooms">Mushrooms</span></label>
+            <label><input type="checkbox" value="potatoes"> <span data-key="potatoes">Potatoes</span></label>
+            <label><input type="checkbox" value="lettuce"> <span data-key="lettuce">Lettuce</span></label>
+            <label><input type="checkbox" value="cucumber"> <span data-key="cucumber">Cucumber</span></label>
+            <label><input type="checkbox" value="zucchini"> <span data-key="zucchini">Zucchini</span></label>
+          </div>
+        </div>
+        <!-- Meat Category -->
+        <div class="filter-category">
+          <div class="category-header" onclick="toggleCategory('meat')">
+            <span data-key="meat">Meat</span>
+            <span class="count" id="meatCount">(0/10)</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="category-items" id="meat">
+            <label><input type="checkbox" value="chicken"> <span data-key="chicken">Chicken</span></label>
+            <label><input type="checkbox" value="beef"> <span data-key="beef">Beef</span></label>
+            <label><input type="checkbox" value="pork"> <span data-key="pork">Pork</span></label>
+            <label><input type="checkbox" value="turkey"> <span data-key="turkey">Turkey</span></label>
+            <label><input type="checkbox" value="salmon"> <span data-key="salmon">Salmon</span></label>
+            <label><input type="checkbox" value="tuna"> <span data-key="tuna">Tuna</span></label>
+            <label><input type="checkbox" value="shrimp"> <span data-key="shrimp">Shrimp</span></label>
+            <label><input type="checkbox" value="ground-beef"> <span data-key="groundBeef">Ground Beef</span></label>
+            <label><input type="checkbox" value="bacon"> <span data-key="bacon">Bacon</span></label>
+            <label><input type="checkbox" value="sausage"> <span data-key="sausage">Sausage</span></label>
+          </div>
+        </div>
+
+        <!-- Grains & Pasta Category -->
+        <div class="filter-category">
+          <div class="category-header" onclick="toggleCategory('grains')">
+            <span data-key="grains">Grains & Pasta</span>
+            <span class="count" id="grainsCount">(0/8)</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="category-items" id="grains">
+            <label><input type="checkbox" value="rice"> <span data-key="rice">Rice</span></label>
+            <label><input type="checkbox" value="pasta"> <span data-key="pasta">Pasta</span></label>
+            <label><input type="checkbox" value="bread"> <span data-key="bread">Bread</span></label>
+            <label><input type="checkbox" value="flour"> <span data-key="flour">Flour</span></label>
+            <label><input type="checkbox" value="oats"> <span data-key="oats">Oats</span></label>
+            <label><input type="checkbox" value="quinoa"> <span data-key="quinoa">Quinoa</span></label>
+            <label><input type="checkbox" value="noodles"> <span data-key="noodles">Noodles</span></label>
+            <label><input type="checkbox" value="tortillas"> <span data-key="tortillas">Tortillas</span></label>
+          </div>
+        </div>
+
+        <!-- Search Button -->
+        <div class="filter-actions">
+        </div>
+      </div>
+    </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+              
+                <!-- Page Title -->
+                <div class="page-header">
+                    <h1 class="page-title" data-key="recipesTitle">RECIPES</h1>
+                </div>
+                <!-- Global Search -->
+                <div class="search-section">
+                    <div class="search-bar">
+                        <input 
+                            type="text" 
+                            id="globalSearch" 
+                            class="search-input" 
+                            data-placeholder-key="searchPlaceholder"
+                            placeholder="Search recipes, ingredients, or cooking methods..."
+                        >
+                        <button class="search-btn" onclick="searchRecipes()">Search</button>
+                    </div>
+                </div>
+
+                <!-- Active Tag Filters -->
+                <div class="filter-tags">
+                    <button class="filter-tag" data-filter="vegan" onclick="toggleFilter('vegan')" data-key="vegan">Vegan</button>
+                    <button class="filter-tag" data-filter="under-30" onclick="toggleFilter('under-30')" data-key="under30">Under 30 minutes</button>
+                    <button class="filter-tag" data-filter="easy" onclick="toggleFilter('easy')" data-key="easy">Easy</button>
+                    <button class="filter-tag" data-filter="healthy" onclick="toggleFilter('healthy')" data-key="healthy">Healthy</button>
+                    <button class="filter-tag" data-filter="italian" onclick="toggleFilter('italian')" data-key="italian">Italian</button>
+                    <button class="filter-tag" data-filter="asian" onclick="toggleFilter('asian')" data-key="asian">Asian</button>
+                </div>
+
+                <!-- Active Filters Display -->
+                <div id="activeFilters" class="active-filters"></div>
+
+                <!-- Result Information -->
+                <div class="result-info">
+                    <h2 id="resultCount" data-key="canMake">You can make 30 recipes!</h2>
+                    <p data-key="doYouHave">Do you have these?</p>
+                    <div class="suggestion-ingredients">
+                        <button class="suggestion-btn" onclick="addSuggestion('eggs')" data-key="eggs">+ Eggs</button>
+                        <button class="suggestion-btn" onclick="addSuggestion('olive-oil')" data-key="oliveOil">+ Olive Oil</button>
+                        <button class="suggestion-btn" onclick="addSuggestion('salt')" data-key="salt">+ Salt</button>
+                        <button class="suggestion-btn" onclick="addSuggestion('pepper')" data-key="pepper">+ Pepper</button>
+                    </div>
+                </div>
+
+                <!-- Recipe Cards Grid -->
+                <div id="recipeGrid" class="recipe-grid">
+                    <!-- Recipes will be populated by JavaScript -->
+                </div>
+
+                <!-- SDG 12 Section -->
+                <div class="sdg-footer-section">
+                    <h3 data-key="sustainability">Sustainability</h3>
+                    <a href="https://sdgs.un.org/goals/goal12" target="_blank" class="sdg-link-footer">
+                        <div class="sdg-content-footer">
+                            <h4 data-key="sdg12Title">SDG 12: Responsible Consumption and Production</h4>
+                            <p data-key="sdg12RecipeDesc">Reduce food waste and promote sustainable cooking practices through smart recipe planning and ingredient management.</p>
+                        </div>
+                    </a>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Nommoro</h3>
+          <p>Building a sustainable future through mindful food consumption and waste reduction.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">About Nommoro</a></li>
+            <li><a href="https://globalgoals.org/goals/12-responsible-consumption-and-production/" target="_blank">SDG 12</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+			<li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="feedback.html">Feedback Form</a></li>
+            <li><a href="support.html">Help & Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/p/Reduce-Food-Waste-100068914386208/" target="_blank" class="social-link">f</a>
+            <a href="https://www.tiktok.com/@zerowastemalaysia?lang=en" target="_blank" class="social-link">t</a>
+            <a href="https://www.instagram.com/zerowastemalaysia_official/?hl=en" target="_blank" class="social-link">i</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nommoro by Group 7, Section 1. All rights reserved. Together, let's reduce food waste for a better tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+
+    <script src="recipe.js"></script>
+</body>
+</html>
